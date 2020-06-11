@@ -1,16 +1,36 @@
 <template>
   <div id="app">
     <header-banner />
+    <topic-banner 
+      v-for="topic in topics" 
+      v-bind:key="topic.id" 
+      v-bind:bgColour="topic.bgColour" 
+      v-bind:title="topic.title" 
+      v-bind:titleColour="topic.titleColour"
+      v-bind:imgtitle="topic.imgTitle"
+    />
+
   </div>
 </template>
 
 <script>
 import HeaderBanner from './components/HeaderBanner.vue'
+import TopicBanner from './components/TopicBanner.vue'
 
 export default {
   name: 'App',
   components: {
-    HeaderBanner
+    'header-banner': HeaderBanner,
+    'topic-banner': TopicBanner
+  },
+  data: function() {
+    return {
+      topics: [
+        {id: 1, bgColour: "#404040", title: "Dev.", titleColour: "#FABC2A", imgTitle: "../assets/icons/design.png"},
+        {id: 2, bgColour: "#72A276", title: "Photo.", titleColour: "#F15025", imgTitle: "camera.png"},
+        {id: 3, bgColour: "#F15025", title: "Design.", titleColour: "#72A276", imgTitle: "terminals.png"}
+      ]
+    }
   }
 }
 </script>

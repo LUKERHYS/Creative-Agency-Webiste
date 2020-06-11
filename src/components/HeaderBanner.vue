@@ -1,14 +1,12 @@
 <template>
     <div class="main">
-        <h1>Luke</h1>
-        <h1>Melvin.</h1>
+        <h1>Luke <br /> Melvin.</h1>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'header-banner',
-        data: []
+        name: 'header-banner'
     }
 </script>
 
@@ -19,9 +17,10 @@
     text-align: left;
 }
 h1 {
-    padding: 0px;
-    font-size: 8vh;
-    font-weight: 900;
+    margin: 0;
+    padding: 2% 10%;
+    font-size: 15vh;
+    line-height: 100%;
     color: #404040;
 }
 
