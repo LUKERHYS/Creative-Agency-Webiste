@@ -1,6 +1,6 @@
 <template>
     <div :style="this.divStyle" class="main">
-        <img :src="this.imgURL" :alt="this.title">
+        <img :src="require(`@/assets/icons/${this.imgName}`)" :alt="this.title">
         <h1 :style="this.h1Style">{{title}}</h1>
         <!-- :src="this.imgBaseUrl + this.imgName" -->
     </div>
@@ -34,16 +34,10 @@
             },
             h1Style(){
                 return {"color": this.titleColour};
-            },
-            topicHoverExpand() {
-                return {"height:hover": "100vh"};
-            },
-            getImgUrl(base, name) {
-                return require(base + name)
-                }
+            }
         },
         mounted(){
-            getImgUrl(this.imgBaseUrl + this.imgName)
+
         }
     }
 </script>
