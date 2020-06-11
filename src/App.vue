@@ -7,9 +7,9 @@
       v-bind:bgColour="topic.bgColour" 
       v-bind:title="topic.title" 
       v-bind:titleColour="topic.titleColour"
-      v-bind:imgtitle="topic.imgTitle"
+      v-bind:imgName="topic.imgName"
+      v-bind:imgBaseUrl="imgBaseUrl"
     />
-
   </div>
 </template>
 
@@ -26,10 +26,11 @@ export default {
   data: function() {
     return {
       topics: [
-        {id: 1, bgColour: "#404040", title: "Dev.", titleColour: "#FABC2A", imgTitle: "../assets/icons/design.png"},
-        {id: 2, bgColour: "#72A276", title: "Photo.", titleColour: "#F15025", imgTitle: "camera.png"},
-        {id: 3, bgColour: "#F15025", title: "Design.", titleColour: "#72A276", imgTitle: "terminals.png"}
-      ]
+        {id: 1, bgColour: "#404040", title: "Dev.", titleColour: "#FABC2A", imgName: "terminals.png"},
+        {id: 2, bgColour: "#72A276", title: "Photo.", titleColour: "#F15025", imgName: "camera.png"},
+        {id: 3, bgColour: "#F15025", title: "Design.", titleColour: "#72A276", imgName: "design.png"}
+      ],
+      imgBaseUrl: "@/assets/icons/"
     }
   }
 }

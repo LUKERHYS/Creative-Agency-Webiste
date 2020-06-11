@@ -15,6 +15,7 @@
     display: flex;
     background-color: #FABC2A;
     text-align: left;
+    height: 100%;
 }
 h1 {
     margin: 0;

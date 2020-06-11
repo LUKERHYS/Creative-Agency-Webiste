@@ -1,7 +1,8 @@
 <template>
     <div :style="this.divStyle" class="main">
-        <img :src="this.imgTitle" :alt="this.title">
+        <img :src="this.imgURL" :alt="this.title">
         <h1 :style="this.h1Style">{{title}}</h1>
+        <!-- :src="this.imgBaseUrl + this.imgName" -->
     </div>
 </template>
 
@@ -19,45 +20,52 @@
                 default: "#FABC2A"
                 }, 
             title: String, 
-            imgTitle: String
+            imgName: String,
+            imgBaseUrl: String
             },
         data: function() {
             return {
-                imgUrl: null
+                imgURL: null
             }
         },
         computed: {
-            divStyle () {
+            divStyle() {
                 return {"backgroundColor": this.bgColour};
             },
-            h1Style (){
+            h1Style(){
                 return {"color": this.titleColour};
-            }
-            // ,
-            // imgUrlCreation () {
-            //     return this.imgUrl = "../assets/icons/" + this.imgTitle;
-            // }
+            },
+            topicHoverExpand() {
+                return {"height:hover": "100vh"};
+            },
+            getImgUrl(base, name) {
+                return require(base + name)
+                }
+        },
+        mounted(){
+            getImgUrl(this.imgBaseUrl + this.imgName)
         }
-        // ,
-        // mounted() {
-        //     imgUrlCreation()
-        // }
     }
 </script>
 
 <style lang="css" scoped>
 .main {
-    display: flex;
+    display: inline-flex;
     justify-content: space-between;
-    align-content: center;
+    align-items: center;
+    width: 100vw;
 }
+/* .main:hover {
+    height: 75vh; 
+} */
 h1 {
-    padding: 2% 15%;
+    padding-right: 1em;
     font-size: 12vh;
 }
 img {
-    height: auto;
-    width: auto;
+    padding-left: 9em;
+    height: 25%;
+    width: 25%;
 }
 
 </style>
