@@ -1,17 +1,22 @@
 <template>
     <div id="header" class="main">
         <h1>Luke <br /> Melvin.</h1>
-        <!-- <img id="scroll-icon" src="@/assets/icons/scroll.png" alt="scroll"> -->
     </div>
 </template>
 
 <script>
     export default {
         name: 'header-banner',
+        data: function () {
+            return {
+            }
+        },
         mounted(){
-            window.onscroll = function() {scrollFunction()};
+            window.onload = function() {
+                setTimeout(() => {scrollFunction()}, 2000);
+                };
                 function scrollFunction() {
-                    if (document.body.scrollTop >= 10 || document.documentElement.scrollTop >= 10) {
+                    if (onload) {
                         document.getElementById("header").style.fontSize = "100%";
                         document.getElementById("header").style.height= "10vh";    
                     } else {
@@ -19,19 +24,15 @@
                         document.getElementById("header").style.height= "100vh";
                     }
                 }
-                // function scroll_arrow_delay() {
-                //     setTimeout(() => {
-                //         document.getElementById("scroll-icons").style.visibility = "hidden";
-                //     },500);
-                    
-                // }
-            }
         }
+    }
 </script>
 
 <style lang="css" scoped>
 #header {
     background-color: #FABC2A;
+    font-size: 90px;
+    height: 100vh;
     position: sticky;
     top: 0;
     transition: 0.9s;
@@ -40,7 +41,7 @@
 }
 h1 {
     margin: 0;
-    padding: 2% 10%;
+    padding: 20px 4%;
     line-height: 100%;
     color: #404040;
 }

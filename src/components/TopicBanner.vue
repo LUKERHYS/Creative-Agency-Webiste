@@ -13,7 +13,7 @@
     export default {
         name: 'topic-banner',
         props: {
-            key: Number,
+            id: Number,
             bgColour: {
                 type: String,
                 default: "#404040"
