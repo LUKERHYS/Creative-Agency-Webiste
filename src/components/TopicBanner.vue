@@ -50,9 +50,10 @@
     width: 100vw;
     height: 33%;
 }
-/* .main:hover {
-    height: 75vh; 
-} */
+.main:hover {
+    height: 50vh; 
+    align-items: flex;
+}
 .img-container, .text-container {
     display: flex;
     align-items: center;
@@ -62,9 +63,13 @@
     min-width: 50%;
     margin: 0;
 }
-/* .img-container {
-    justify-content: center;
-} */
+/* .img-container:hover {
+    align-items: flex-start;
+} 
+.text-container:hover {
+    align-items: flex-start;
+}  */
+
 h1 {
     font-size: 12vh;
 }
