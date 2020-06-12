@@ -26,11 +26,6 @@
             imgName: String,
             flip: Boolean
             },
-        data: function() {
-            return {
-
-            }
-        },
         computed: {
             divStyle() {
                 return {"backgroundColor": this.bgColour};
@@ -43,12 +38,6 @@
                   return {"flex-direction": "row-reverse", };  
                 }
             }
-        },
-        methods: {
-            
-        },
-        mounted() {
-
         }
     }
 </script>
@@ -57,6 +46,7 @@
 .main {
     display: inline-flex;
     align-items: center;
+    flex-wrap: wrap;
     width: 100vw;
     height: 33%;
 }
@@ -69,15 +59,12 @@
     justify-content: center;
     /* border: red solid; */
     height: 100%;
-    width: 50%;
+    min-width: 50%;
     margin: 0;
 }
-
 /* .img-container {
     justify-content: center;
 } */
-
-
 h1 {
     font-size: 12vh;
 }
