@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <header-banner />
+
     <topic-banner 
       v-for="topic in topics" 
       v-bind:key="topic.id" 
@@ -8,9 +9,9 @@
       v-bind:title="topic.title" 
       v-bind:titleColour="topic.titleColour"
       v-bind:imgName="topic.imgName"
-      v-bind:imgBaseUrl="imgBaseUrl"
+      v-bind:flip="topic.flip"
     />
-  </div>
+    </div>
 </template>
 
 <script>
@@ -26,11 +27,10 @@ export default {
   data: function() {
     return {
       topics: [
-        {id: 1, bgColour: "#404040", title: "Dev.", titleColour: "#FABC2A", imgName: "terminals.png"},
-        {id: 2, bgColour: "#72A276", title: "Photo.", titleColour: "#F15025", imgName: "camera.png"},
-        {id: 3, bgColour: "#F15025", title: "Design.", titleColour: "#72A276", imgName: "design.png"}
-      ],
-      imgBaseUrl: "@/assets/icons/"
+        {id: 1, bgColour: "#404040", title: "Dev.", titleColour: "#FABC2A", imgName: "terminals.png", flip: false},
+        {id: 2, bgColour: "#72A276", title: "Photo.", titleColour: "#F15025", imgName: "camera.png", flip: true},
+        {id: 3, bgColour: "#F15025", title: "Design.", titleColour: "#72A276", imgName: "design.png", flip: false}
+      ]
     }
   }
 }

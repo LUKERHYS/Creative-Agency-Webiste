@@ -1,8 +1,11 @@
 <template>
-    <div :style="this.divStyle" class="main">
-        <img :src="require(`@/assets/icons/${this.imgName}`)" :alt="this.title">
-        <h1 :style="this.h1Style">{{title}}</h1>
-        <!-- :src="this.imgBaseUrl + this.imgName" -->
+    <div :style="[this.divStyle, this.icon_heading_flip]" class="main">
+        <div class="img-container">
+            <img :src="require(`@/assets/icons/${this.imgName}`)" :alt="this.title">
+        </div>
+        <div class="text-container">
+            <h1 :style="this.h1Style">{{title}}</h1>
+        </div>
     </div>
 </template>
 
@@ -10,7 +13,7 @@
     export default {
         name: 'topic-banner',
         props: {
-            id: Number,
+            key: Number,
             bgColour: {
                 type: String,
                 default: "#404040"
@@ -21,22 +24,30 @@
                 }, 
             title: String, 
             imgName: String,
-            imgBaseUrl: String
+            flip: Boolean
             },
         data: function() {
             return {
-                imgURL: null
+
             }
         },
         computed: {
             divStyle() {
                 return {"backgroundColor": this.bgColour};
             },
-            h1Style(){
+            h1Style() {
                 return {"color": this.titleColour};
+            },
+            icon_heading_flip() {
+                if(this.flip == true) {
+                  return {"flex-direction": "row-reverse", };  
+                }
             }
         },
-        mounted(){
+        methods: {
+            
+        },
+        mounted() {
 
         }
     }
@@ -45,21 +56,34 @@
 <style lang="css" scoped>
 .main {
     display: inline-flex;
-    justify-content: space-between;
     align-items: center;
     width: 100vw;
+    height: 33%;
 }
 /* .main:hover {
     height: 75vh; 
 } */
+.img-container, .text-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: red solid; */
+    height: 100%;
+    width: 50%;
+    margin: 0;
+}
+
+/* .img-container {
+    justify-content: center;
+} */
+
+
 h1 {
-    padding-right: 1em;
     font-size: 12vh;
 }
 img {
-    padding-left: 9em;
-    height: 25%;
-    width: 25%;
+    max-height: 200px;
+    max-width: 200px;
 }
 
 </style>
