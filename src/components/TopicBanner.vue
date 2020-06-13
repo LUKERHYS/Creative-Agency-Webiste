@@ -49,6 +49,7 @@
     flex-wrap: wrap;
     width: 100vw;
     height: 33%;
+    transition-duration: 0.5s;
 }
 .main:hover {
     height: 50vh; 

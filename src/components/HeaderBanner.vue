@@ -18,7 +18,7 @@
                 function scrollFunction() {
                     if (onload) {
                         document.getElementById("header").style.fontSize = "100%";
-                        document.getElementById("header").style.height= "10vh";    
+                        document.getElementById("header").style.height= "10vh";   
                     } else {
                         document.getElementById("header").style.fontSize = "90px";
                         document.getElementById("header").style.height= "100vh";
@@ -35,13 +35,13 @@
     height: 100vh;
     position: sticky;
     top: 0;
-    transition: 0.9s;
+    transition: 2s;
     width: 100%;
     z-index: 1000;
 }
 h1 {
     margin: 0;
-    padding: 20px 4%;
+    padding: 0 4%;
     line-height: 100%;
     color: #404040;
 }
