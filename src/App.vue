@@ -1,17 +1,18 @@
 <template>
   <div id="app">
     <header-banner />
-
-    <topic-banner 
-      v-for="topic in topics" 
-      v-bind:key="topic.id" 
-      v-bind:bgColour="topic.bgColour" 
-      v-bind:title="topic.title" 
-      v-bind:titleColour="topic.titleColour"
-      v-bind:imgName="topic.imgName"
-      v-bind:flip="topic.flip"
-    />
-    </div>
+  <div class="grid-container">
+      <topic-banner 
+        v-for="topic in topics" 
+        v-bind:key="topic.id" 
+        v-bind:bgColour="topic.bgColour" 
+        v-bind:title="topic.title" 
+        v-bind:titleColour="topic.titleColour"
+        v-bind:imgName="topic.imgName"
+        v-bind:flip="topic.flip"
+      />
+      </div>
+  </div>
 </template>
 
 <script>
@@ -42,5 +43,16 @@ export default {
   font-family: Futura, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+div {
+    border: red solid;
+}
+.grid-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 100vw;
+    height: auto;
+    padding: 2%;
 }
 </style>

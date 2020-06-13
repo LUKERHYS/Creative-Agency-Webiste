@@ -1,12 +1,12 @@
 <template>
-    <div :style="[this.divStyle, this.icon_heading_flip]" class="main">
-        <div class="img-container">
-            <img :src="require(`@/assets/icons/${this.imgName}`)" :alt="this.title">
+        <div :style="[this.divStyle, this.icon_heading_flip]" class="main">
+            <div class="img-container">
+                <img :src="require(`@/assets/icons/${this.imgName}`)" :alt="this.title">
+            </div>
+            <div class="text-container">
+                <h1 :style="this.h1Style">{{title}}</h1>
+            </div>
         </div>
-        <div class="text-container">
-            <h1 :style="this.h1Style">{{title}}</h1>
-        </div>
-    </div>
 </template>
 
 <script>
@@ -47,7 +47,7 @@
     display: inline-flex;
     align-items: center;
     flex-wrap: wrap;
-    width: 100vw;
+    width: 20vw;
     height: 33%;
     transition-duration: 0.5s;
 }
@@ -59,10 +59,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* border: red solid; */
     height: 100%;
+    width: 100%;
     min-width: 50%;
-    margin: 0;
 }
 /* .img-container:hover {
     align-items: flex-start;

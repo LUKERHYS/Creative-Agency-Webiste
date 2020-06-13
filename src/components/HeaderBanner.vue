@@ -36,7 +36,7 @@
     position: sticky;
     top: 0;
     transition: 2s;
-    width: 100%;
+    max-width: 100vw;
     z-index: 1000;
 }
 h1 {
