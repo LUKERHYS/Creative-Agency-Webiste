@@ -51,10 +51,6 @@
     height: 33%;
     transition-duration: 0.5s;
 }
-.main:hover {
-    height: 50vh; 
-    align-items: flex;
-}
 .img-container, .text-container {
     display: flex;
     align-items: center;
