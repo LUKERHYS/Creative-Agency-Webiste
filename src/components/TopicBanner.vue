@@ -1,10 +1,20 @@
 <template>
-    <div :style="[this.divStyle, this.icon_heading_flip]" class="main">
-        <div class="img-container">
-            <img :src="require(`@/assets/icons/${this.imgName}`)" :alt="this.title">
+    <div id="main">
+        <div v-on:click="hidden = !hidden" :style="[this.divStyle, this.icon_heading_flip]" class="main">
+            <div class="img-container">
+                <img :src="require(`@/assets/icons/${this.imgName}`)" :alt="this.title">
+            </div>
+            <div class="text-container">
+                <h1 :style="this.h1Style">{{title}}</h1>
+            </div>
         </div>
-        <div class="text-container">
-            <h1 :style="this.h1Style">{{title}}</h1>
+        <div class="info" style="display: none" id="info">
+
+            <div class="text-container">
+                <h1 :style="this.h1Style">{{title}}</h1>
+                <p>{{blurb}}</p>
+            </div>
+
         </div>
     </div>
 </template>
@@ -12,6 +22,11 @@
 <script>
     export default {
         name: 'topic-banner',
+        data() {
+            return {
+                hidden: true
+            }
+        },
         props: {
             id: Number,
             bgColour: {
@@ -24,7 +39,8 @@
                 }, 
             title: String, 
             imgName: String,
-            flip: Boolean
+            flip: Boolean,
+            blurb: String
             },
         computed: {
             divStyle() {
@@ -35,7 +51,17 @@
             },
             icon_heading_flip() {
                 if(this.flip == true) {
-                  return {"flex-direction": "row-reverse", };  
+                  return {"flex-direction": "row-reverse"};  
+                }
+            }
+        },
+        watch:{
+            hidden: function (value, oldValue) { 
+            const info = document.getElementById("info");
+                if(this.hidden){
+                    info.style.display = "none";
+                } else {
+                    info.style.display = null;
                 }
             }
         }
@@ -48,25 +74,20 @@
     align-items: center;
     flex-wrap: wrap;
     width: 100vw;
-    height: 33%;
+    max-height: 20%;
     transition-duration: 0.5s;
+}
+.main:hover {
+    opacity: 0.8;
 }
 .img-container, .text-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* border: red solid; */
-    height: 100%;
     min-width: 50%;
     margin: 0;
+    padding: 0;
 }
-/* .img-container:hover {
-    align-items: flex-start;
-} 
-.text-container:hover {
-    align-items: flex-start;
-}  */
-
 h1 {
     font-size: 12vh;
 }

@@ -10,6 +10,7 @@
       v-bind:titleColour="topic.titleColour"
       v-bind:imgName="topic.imgName"
       v-bind:flip="topic.flip"
+      v-bind:blurb="topic.blurb"
     />
     </div>
 </template>
@@ -27,7 +28,8 @@ export default {
   data: function() {
     return {
       topics: [
-        {id: 1, bgColour: "#404040", title: "Dev.", titleColour: "#FABC2A", imgName: "terminals.png", flip: false},
+        {id: 1, bgColour: "#404040", title: "Dev.", titleColour: "#FABC2A", imgName: "terminals.png", flip: false, 
+          blurb: "I have been developing software for  short period but problem solving has been a constant."},
         {id: 2, bgColour: "#72A276", title: "Photo.", titleColour: "#F15025", imgName: "camera.png", flip: true},
         {id: 3, bgColour: "#F15025", title: "Design.", titleColour: "#72A276", imgName: "design.png", flip: false},
         {id: 4, bgColour: "#404040", title: "Blog.", titleColour: "#72A276", imgName: "scroll.png", flip: true}
