@@ -1,6 +1,5 @@
 <template>
-    <div id="main">
-        <div v-on:click="hidden = !hidden" :style="[this.divStyle, this.icon_heading_flip]" class="main">
+        <div :key="id" v-on:click="[hidden = !hidden, handleClick]" :style="[this.divStyle, this.icon_heading_flip]" class="main">
             <div class="img-container">
                 <img :src="require(`@/assets/icons/${this.imgName}`)" :alt="this.title">
             </div>
@@ -8,15 +7,6 @@
                 <h1 :style="this.h1Style">{{title}}</h1>
             </div>
         </div>
-        <div class="info" style="display: none" id="info">
-
-            <div class="text-container">
-                <h1 :style="this.h1Style">{{title}}</h1>
-                <p>{{blurb}}</p>
-            </div>
-
-        </div>
-    </div>
 </template>
 
 <script>
@@ -26,6 +16,11 @@
             return {
                 hidden: true
             }
+        },
+        methods: {
+            handleClick() {
+                eventBus.$emit('topic-selected', this.topic);
+                }
         },
         props: {
             id: Number,
@@ -95,5 +90,9 @@ img {
     max-height: 200px;
     max-width: 200px;
 }
+/* .info {
+    transition-duration: 5s;
+    transition:cubic-bezier(0.075, 0.82, 0.165, 1);
+} */
 
 </style>

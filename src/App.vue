@@ -12,18 +12,23 @@
       v-bind:flip="topic.flip"
       v-bind:blurb="topic.blurb"
     />
-    </div>
+    <info-card v-if="selectedTopic" :topics="selectedTopic" />
+  </div>
 </template>
 
 <script>
 import HeaderBanner from './components/HeaderBanner.vue'
 import TopicBanner from './components/TopicBanner.vue'
+import InfoCard from './components/InfoCard'
+
+import {eventBus} from './main.js'
 
 export default {
   name: 'App',
   components: {
     'header-banner': HeaderBanner,
-    'topic-banner': TopicBanner
+    'topic-banner': TopicBanner,
+    'info-card': InfoCard
   },
   data: function() {
     return {
@@ -33,8 +38,15 @@ export default {
         {id: 2, bgColour: "#72A276", title: "Photo.", titleColour: "#F15025", imgName: "camera.png", flip: true},
         {id: 3, bgColour: "#F15025", title: "Design.", titleColour: "#72A276", imgName: "design.png", flip: false},
         {id: 4, bgColour: "#404040", title: "Blog.", titleColour: "#72A276", imgName: "scroll.png", flip: true}
-      ]
+      ],
+      selectedTopic = topic;
     }
+  },
+  mounted() {
+    eventBus.$on('topic-selected', (topic) => {
+      this.selectedTopic = beer;
+      console.log(this.selectedTopic);
+    })
   }
 }
 </script>
