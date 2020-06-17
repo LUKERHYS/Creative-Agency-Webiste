@@ -1,7 +1,7 @@
 <template>
-    <div v-on:click="hidden = !hidden" class="info" style="display: none" id="info">
+    <div v-on:click="hidden = !hidden" id="info">
 
-            <div class="text-container">
+            <div v-if="topic" class="text-container">
                 <h1 :style="this.h1Style">{{title}}</h1>
                 <p>{{blurb}}</p>
             </div>
@@ -12,7 +12,7 @@
 <script>
     export default {
         name: 'info-card',
-        props: ['topics']
+        props: ['topic']
     }
 </script>
 

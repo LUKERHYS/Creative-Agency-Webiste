@@ -2,14 +2,14 @@
   <div id="app">
     <header-banner />
 
-    <topic-banner :topics="topics"/>
-    <info-card v-if="selectedTopic" :topics="selectedTopic" />
+    <topic-list :topics="topics"/>
+    <info-card v-if="selectedTopic" :topic="selectedTopic" />
   </div>
 </template>
 
 <script>
 import HeaderBanner from './components/HeaderBanner.vue'
-import TopicBanner from './components/TopicBanner.vue'
+import TopicList from './components/TopicList.vue'
 import InfoCard from './components/InfoCard'
 
 import {eventBus} from './main.js'
@@ -18,7 +18,7 @@ export default {
   name: 'App',
   components: {
     'header-banner': HeaderBanner,
-    'topic-banner': TopicBanner,
+    'topic-list': TopicList,
     'info-card': InfoCard
   },
   data: function() {
@@ -35,8 +35,7 @@ export default {
   },
   mounted() {
     eventBus.$on('topic-selected', (topic) => {
-      return this.selectedTopic = topic;
-      console.log("My click was passed to the app with:");
+      this.selectedTopic = topic;
     })
   }
 }

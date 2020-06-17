@@ -1,14 +1,12 @@
 <template>
-    <div>
-        <div v-for="(topic, index) in topics" :key="index" v-on:click="[hidden = !hidden, handleClick()]" :style="[this.divStyle, this.icon_heading_flip]" class="main">
+        <div v-on:click="[hidden = !hidden, handleClick()]" :style="[this.divStyle, this.icon_heading_flip]" :topic="topic" class="main">
             <div class="img-container">
                 <img :src="require(`@/assets/icons/${topic.imgName}`)" :alt="topic.title">
             </div>
             <div class="text-container">
-                <h1 :style="this.h1Style">{{title}}</h1>
+                <h1 :style="this.h1Style">{{topic.title}}</h1>
             </div>
         </div>
-    </div>
 </template>
 
 <script>
@@ -23,17 +21,15 @@ import {eventBus} from '../main.js'
         methods: {
             handleClick() {
                 eventBus.$emit('topic-selected', this.topic);
-                console.log("My click was handled for:")
-                console.log('HIDDEN:', this.hidden)
                 }
         },
-        props:['topics'],
+        props:['topic'],
         computed: {
             divStyle() {
-                return {"backgroundColor": this.topics.bgColour};
+                return {"backgroundColor": this.topic.bgColour};
             },
             h1Style() {
-                return {"color": this.topics.titleColour};
+                return {"color": this.topic.titleColour};
             },
             icon_heading_flip() {
                 if(this.topic.flip == true) {
@@ -85,5 +81,4 @@ img {
     transition-duration: 5s;
     transition:cubic-bezier(0.075, 0.82, 0.165, 1);
 } */
-
 </style>
