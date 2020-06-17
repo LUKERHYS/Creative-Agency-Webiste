@@ -4,7 +4,7 @@
 
     <topic-list :topics="topics"/>
 
-    <info-card v-if="selectedTopic" :topic="selectedTopic" />
+    <!-- <info-card v-if="selectedTopic" :topic="selectedTopic" /> -->
   </div>
 </template>
 
@@ -33,11 +33,11 @@ export default {
       selectedTopic: null
     }
   },
-  mounted() {
-    eventBus.$on('topic-selected', (topic) => {
-      this.selectedTopic = topic;
-    })
-  }
+  // mounted() {
+  //   eventBus.$on('topic-selected', (topic) => {
+  //     this.selectedTopic = topic;
+  //   })
+  // }
 }
 </script>
 

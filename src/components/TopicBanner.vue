@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import InfoCard from './InfoCard.vue'
 import {eventBus} from '../main.js'
     export default {
         name: 'topic-banner',
@@ -37,17 +36,17 @@ import {eventBus} from '../main.js'
                   return {"flex-direction": "row-reverse"};  
                 }
             }
+        },
+        watch:{
+            hidden: function (value, oldValue) { 
+            const info = document.getElementById("info");
+                if(this.hidden){
+                    info.style.display = "none";
+                } else {
+                    info.style.display = null;
+                }
+            }
         }
-        // watch:{
-        //     hidden: function (value, oldValue) { 
-        //     const info = document.getElementById("info");
-        //         if(this.hidden){
-        //             info.style.display = "none";
-        //         } else {
-        //             info.style.display = null;
-        //         }
-        //     }
-        // }
     }
 </script>
 
