@@ -2,16 +2,7 @@
   <div id="app">
     <header-banner />
 
-    <topic-banner 
-      v-for="topic in topics" 
-      v-bind:key="topic.id" 
-      v-bind:bgColour="topic.bgColour" 
-      v-bind:title="topic.title" 
-      v-bind:titleColour="topic.titleColour"
-      v-bind:imgName="topic.imgName"
-      v-bind:flip="topic.flip"
-      v-bind:blurb="topic.blurb"
-    />
+    <topic-banner :topics="topics"/>
     <info-card v-if="selectedTopic" :topics="selectedTopic" />
   </div>
 </template>
@@ -34,18 +25,18 @@ export default {
     return {
       topics: [
         {id: 1, bgColour: "#404040", title: "Dev.", titleColour: "#FABC2A", imgName: "terminals.png", flip: false, 
-          blurb: "I have been developing software for  short period but problem solving has been a constant."},
+          blurb: "I have been developing software for short period but problem solving has been a constant."},
         {id: 2, bgColour: "#72A276", title: "Photo.", titleColour: "#F15025", imgName: "camera.png", flip: true},
         {id: 3, bgColour: "#F15025", title: "Design.", titleColour: "#72A276", imgName: "design.png", flip: false},
         {id: 4, bgColour: "#404040", title: "Blog.", titleColour: "#72A276", imgName: "scroll.png", flip: true}
       ],
-      selectedTopic = topic;
+      selectedTopic: null
     }
   },
   mounted() {
     eventBus.$on('topic-selected', (topic) => {
-      this.selectedTopic = beer;
-      console.log(this.selectedTopic);
+      return this.selectedTopic = topic;
+      console.log("My click was passed to the app with:");
     })
   }
 }

@@ -1,15 +1,18 @@
 <template>
-        <div :key="id" v-on:click="[hidden = !hidden, handleClick]" :style="[this.divStyle, this.icon_heading_flip]" class="main">
+    <div>
+        <div v-for="(topic, index) in topics" :key="index" v-on:click="[hidden = !hidden, handleClick()]" :style="[this.divStyle, this.icon_heading_flip]" class="main">
             <div class="img-container">
-                <img :src="require(`@/assets/icons/${this.imgName}`)" :alt="this.title">
+                <img :src="require(`@/assets/icons/${topic.imgName}`)" :alt="topic.title">
             </div>
             <div class="text-container">
                 <h1 :style="this.h1Style">{{title}}</h1>
             </div>
         </div>
+    </div>
 </template>
 
 <script>
+import {eventBus} from '../main.js'
     export default {
         name: 'topic-banner',
         data() {
@@ -20,32 +23,20 @@
         methods: {
             handleClick() {
                 eventBus.$emit('topic-selected', this.topic);
+                console.log("My click was handled for:")
+                console.log('HIDDEN:', this.hidden)
                 }
         },
-        props: {
-            id: Number,
-            bgColour: {
-                type: String,
-                default: "#404040"
-                }, 
-            titleColour: {
-                type: String,
-                default: "#FABC2A"
-                }, 
-            title: String, 
-            imgName: String,
-            flip: Boolean,
-            blurb: String
-            },
+        props:['topics'],
         computed: {
             divStyle() {
-                return {"backgroundColor": this.bgColour};
+                return {"backgroundColor": this.topics.bgColour};
             },
             h1Style() {
-                return {"color": this.titleColour};
+                return {"color": this.topics.titleColour};
             },
             icon_heading_flip() {
-                if(this.flip == true) {
+                if(this.topic.flip == true) {
                   return {"flex-direction": "row-reverse"};  
                 }
             }
