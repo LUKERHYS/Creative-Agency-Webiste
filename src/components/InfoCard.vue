@@ -1,9 +1,9 @@
 <template>
-    <div v-on:click="hidden = !hidden" id="info">
+    <div id="info">
 
-            <div v-if="topic" class="text-container">
+            <div v-if="this.topic" class="text-container">
                 <h1 :style="this.h1Style">{{this.topic.title}}</h1>
-                <p>{{blurb}}</p>
+                <p>{{this.topic.blurb}}</p>
             </div>
 
         </div>

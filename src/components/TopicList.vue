@@ -1,7 +1,7 @@
 <template>
     <ul>
-        <topic-banner v-for="(topic, index) in topics" :topic="topic" :key="index" :style="flexListOrdering" />
-        <info-card v-if="selectedTopic" :topic="selectedTopic" :style="flexListOrdering"/>
+            <topic-banner :topic="topic" :key="index" v-for="(topic, index) in topics" />
+            <info-card v-if="selectedTopic" :topic="selectedTopic" :style="listOrder" />
     </ul>
 </template>
 
@@ -25,12 +25,12 @@ import {eventBus} from '../main.js'
         },
         mounted() {
             eventBus.$on('topic-selected', (topic) => {
-            this.selectedTopic = topic;
+            this.selectedTopic = this.topic;
            })
         },
         computed: {
-            flexListOrdering() {
-                return {"order": this.index};
+            listOrder() {
+                return {"order": this.topic.id};
             }
         }
     }
@@ -40,7 +40,8 @@ import {eventBus} from '../main.js'
 ul {
     margin: 0px;
     padding: 0px;
-    display: flexbox;
+    display: flex;
+    flex-direction: column;
 }
 li {
     margin: 0px;
