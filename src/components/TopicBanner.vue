@@ -1,5 +1,5 @@
 <template>
-    <div v-on:click="[isHidden = !isHidden, handleClick()]" :style="[this.divStyle, this.icon_heading_flip]" :topic="topic" class="main">
+    <div v-on:click="[handleClick(), isHidden = !isHidden]" :style="[this.divStyle, this.icon_heading_flip]" :topic="topic" class="main">
 
         <div class="img-container">
             <img :src="require(`@/assets/icons/${topic.imgName}`)" :alt="topic.title">
@@ -8,9 +8,7 @@
         <div class="text-container">
             <h1 :style="this.h1Style">{{topic.title}}</h1>
         </div>
-
-        <info-card v-if="!isHidden" :details="infoCard" id="info" />
-
+        <info-card v-if="!isHidden" transition="expand" :details="infoCard" id="info" />
     </div>
 </template>
 
@@ -46,29 +44,36 @@ import {eventBus} from '../main.js'
         methods: {
             handleClick() {
                 eventBus.$emit('topic-selected', this.topic);
-                console.log("TOPIC_PAYLOAD: ",  this.topic);
-            }
         }
     }
+}
 </script>
 
 <style lang="css" scoped>
 .main {
     display: inline-flex;
     align-items: center;
-    flex-wrap: wrap;
     width: 100vw;
-    max-height: 20%;
+    max-width: 100%;
     transition-duration: 0.5s;
+    opacity: 0.8;
 }
 .main:hover {
-    opacity: 0.8;
+    opacity: 1;
+}
+@media screen and (max-width: 900px) {
+ .main{
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    padding: 1em 0;
+  }
 }
 .img-container, .text-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 50%;
+    width: 50%;
+    height: auto;
     margin: 0;
     padding: 0;
 }
@@ -79,8 +84,4 @@ img {
     max-height: 200px;
     max-width: 200px;
 }
-/* .info {
-    transition-duration: 5s;
-    transition:cubic-bezier(0.075, 0.82, 0.165, 1);
-} */
 </style>
