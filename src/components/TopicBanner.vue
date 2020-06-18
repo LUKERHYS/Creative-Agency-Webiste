@@ -1,29 +1,36 @@
 <template>
         <div v-on:click="[hidden = !hidden, handleClick()]" :style="[this.divStyle, this.icon_heading_flip]" :topic="topic" class="main">
-            <div class="img-container">
-                <img :src="require(`@/assets/icons/${topic.imgName}`)" :alt="topic.title">
-            </div>
-            <div class="text-container">
-                <h1 :style="this.h1Style">{{topic.title}}</h1>
-            </div>
+
+                <div class="img-container">
+                    <img :src="require(`@/assets/icons/${topic.imgName}`)" :alt="topic.title">
+                </div>
+
+                <div class="text-container">
+                    <h1 :style="this.h1Style">{{topic.title}}</h1>
+                </div>
+
+                <!-- <info-card v-if="infoCard != null" :details="infoCard" :hidden="hidden" style="display: none" id="info" /> -->
+
         </div>
 </template>
 
 <script>
+import InfoCard from './InfoCard.vue'
+
 import {eventBus} from '../main.js'
+
     export default {
         name: 'topic-banner',
         data() {
             return {
-                hidden: true
+                hidden: true,
+                info: null
             }
         },
-        methods: {
-            handleClick() {
-                eventBus.$emit('topic-selected', this.topic);
-                }
+        components: {
+            "info-card": InfoCard
         },
-        props:['topic'],
+        props:['topic', 'infoCard'],
         computed: {
             divStyle() {
                 return {"backgroundColor": this.topic.bgColour};
@@ -39,12 +46,16 @@ import {eventBus} from '../main.js'
         },
         watch:{
             hidden: function (value, oldValue) { 
-            const info = document.getElementById("info");
                 if(this.hidden){
-                    info.style.display = "none";
+                    return document.getElementById("info").style.display = "none";
                 } else {
-                    info.style.display = null;
+                    return document.getElementById("info").style.display = null;
                 }
+            }
+        },
+        methods: {
+            handleClick() {
+                eventBus.$emit('topic-selected', this.topic);
             }
         }
     }

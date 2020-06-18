@@ -1,50 +1,30 @@
 <template>
-    <div id="info">
-
-            <div v-if="this.topic" class="text-container">
-                <h1 :style="this.h1Style">{{this.topic.title}}</h1>
-                <p>{{this.topic.blurb}}</p>
+        <div class="details-container">
+            <div class="details-child">
+                <h1>{{this.details.title}}</h1>
+                <p>{{this.details.blurb}}</p>
             </div>
-
         </div>
 </template>
 
 <script>
     export default {
         name: 'info-card',
-        props: ['topic']
+        props: ['details']
     }
 </script>
 
 <style lang="css" scoped>
-.main {
-    display: inline-flex;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100vw;
-    max-height: 20%;
-    transition-duration: 0.5s;
-}
-.main:hover {
-    opacity: 0.8;
-}
-.img-container, .text-container {
+.details-container {
+    background-color: lightgray;
+    width:100vw;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    min-width: 50%;
-    margin: 0;
-    padding: 0;
+
 }
-h1 {
-    font-size: 12vh;
+.details-child {
+    width: 50vw;
+    text-justify: left;
 }
-img {
-    max-height: 200px;
-    max-width: 200px;
-}
-/* .info {
-    transition-duration: 5s;
-    transition:cubic-bezier(0.075, 0.82, 0.165, 1);
-} */
 </style>
