@@ -21,7 +21,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    position: relative;
 }
 .details-child {
     width: 50vw;

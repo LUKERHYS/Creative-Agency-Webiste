@@ -1,17 +1,17 @@
 <template>
-        <div v-on:click="[hidden = !hidden, handleClick()]" :style="[this.divStyle, this.icon_heading_flip]" :topic="topic" class="main">
+    <div v-on:click="[isHidden = !isHidden, handleClick()]" :style="[this.divStyle, this.icon_heading_flip]" :topic="topic" class="main">
 
-                <div class="img-container">
-                    <img :src="require(`@/assets/icons/${topic.imgName}`)" :alt="topic.title">
-                </div>
-
-                <div class="text-container">
-                    <h1 :style="this.h1Style">{{topic.title}}</h1>
-                </div>
-
-                <!-- <info-card v-if="infoCard != null" :details="infoCard" :hidden="hidden" style="display: none" id="info" /> -->
-
+        <div class="img-container">
+            <img :src="require(`@/assets/icons/${topic.imgName}`)" :alt="topic.title">
         </div>
+
+        <div class="text-container">
+            <h1 :style="this.h1Style">{{topic.title}}</h1>
+        </div>
+
+        <info-card v-if="!isHidden" :details="infoCard" id="info" />
+
+    </div>
 </template>
 
 <script>
@@ -23,8 +23,7 @@ import {eventBus} from '../main.js'
         name: 'topic-banner',
         data() {
             return {
-                hidden: true,
-                info: null
+                isHidden: true
             }
         },
         components: {
@@ -44,18 +43,10 @@ import {eventBus} from '../main.js'
                 }
             }
         },
-        watch:{
-            hidden: function (value, oldValue) { 
-                if(this.hidden){
-                    return document.getElementById("info").style.display = "none";
-                } else {
-                    return document.getElementById("info").style.display = null;
-                }
-            }
-        },
         methods: {
             handleClick() {
                 eventBus.$emit('topic-selected', this.topic);
+                console.log("TOPIC_PAYLOAD: ",  this.topic);
             }
         }
     }

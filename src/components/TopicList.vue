@@ -1,8 +1,8 @@
 <template>
-    <ul>
-            <topic-banner v-for="(topic, index) in topics" :topic="topic" :infoCard="infoCard" :key="index" />
-            <info-card v-if="infoCard" :details="this.infoCard" style="display: none" id="info" :style="this.divPosition"/>
-    </ul>
+    <div>
+        <topic-banner v-for="(topic, index) in topics" :topic="topic" :infoCard="infoCard" :key="index" id="" />
+    </div>
+
 </template>
 
 <script>
@@ -21,22 +21,15 @@ import {eventBus} from '../main.js'
         data: function(){
             return {
                 infoCard: null,
-                listOrder: null
-            }
-        },
-        computed: {
-            divPosition() {
-                return {"order": this.listOrder};
-            }
+                isHidden: false
+                }
         },
         mounted() {
             eventBus.$on('topic-selected', (topic) => {
             this.infoCard = topic;
-            this.listOrder = topic.id;
-            console.log("LIST_ORDER: ", this.listOrder);
-           })
-        }
+        })
     }
+}
 </script>
 
 <style lang="css" scoped>
