@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <topic-banner v-for="(topic, index) in topics" :topics="topics" :topic="topic" :key="index" id="" />
+    <div class="topic-container">
+        <topic-banner class="topic" v-for="(topic, index) in topics" :topics="topics" :topic="topic" :key="index" id="" />
     </div>
 
 </template>
@@ -26,14 +26,13 @@ import {eventBus} from '../main.js'
 </script>
 
 <style lang="css" scoped>
-ul {
-    margin: 0px;
-    padding: 0px;
+.topic-container {
     display: flex;
     flex-direction: column;
+    max-width: 100vw;
+    align-items: center;
 }
-li {
-    margin: 0px;
-    padding: 0px;
+.topic {
+    max-width: 90vw;
 }
 </style>
