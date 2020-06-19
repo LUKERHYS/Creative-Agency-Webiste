@@ -4,13 +4,23 @@
                 <h1>{{this.details.title}}</h1>
                 <p>{{this.details.blurb}}</p>
             </div>
+
+            <folio-grid />
+
         </div>
 </template>
 
 <script>
+import FolioGrid from './FolioGrid.vue'
+
+import {eventBus} from '../main.js'
+
     export default {
         name: 'info-card',
-        props: ['details']
+        props: ['details'],
+        components: {
+            'folio-grid': FolioGrid,
+        }
     }
 </script>
 

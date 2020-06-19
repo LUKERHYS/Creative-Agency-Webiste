@@ -21,7 +21,7 @@ import {eventBus} from '../main.js'
         name: 'topic-banner',
         data() {
             return {
-                isHidden: this.topic.detailHidden
+                isHidden: null
             }
         },
         components: {
@@ -59,6 +59,7 @@ import {eventBus} from '../main.js'
     transition-duration: 0.5s;
     opacity: 0.8;
     flex-wrap: wrap;
+    /* border-radius: 1em 0 0 1em; */
 }
 .main:hover {
     opacity: 1;

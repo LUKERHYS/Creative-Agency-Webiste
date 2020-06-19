@@ -23,7 +23,7 @@ export default {
   data: function() {
     return {
       topics: [
-        {id: 1, bgColour: "#404040", title: "Dev.", titleColour: "#FABC2A", imgName: "terminals.png", flip: false, blurb: "I have been developing software for short period but problem solving has been a constant.", detailHidden: true, infoCard: null},
+        {id: 1, bgColour: "#404040", title: "Dev.", titleColour: "#FABC2A", imgName: "terminals.png", flip: false, blurb: "I have been developing software for short period but problem solving has been a constant.", infoCard: null},
         {id: 2, bgColour: "#72A276", title: "Photo.", titleColour: "#F15025", imgName: "camera.png", flip: true, blurb: "Photographys is ace!", detailHidden: true, infoCard: null},
         {id: 3, bgColour: "#F15025", title: "Design.", titleColour: "#72A276", imgName: "design.png", flip: false, blurb: "Design is tough but I enjoy it", detailHidden: true, infoCard: null},
         {id: 4, bgColour: "#404040", title: "Blog.", titleColour: "#72A276", imgName: "scroll.png", flip: true, blurb: "Blog you say", detailHidden: true, infoCard: null}
