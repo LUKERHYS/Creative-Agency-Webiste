@@ -1,5 +1,5 @@
 <template>
-    <div v-on:click="[handleClick(), isHidden = !isHidden]" :style="[this.divStyle, this.icon_heading_flip]" :topic="topic" class="main">
+    <div v-on:click="[handleClick()]" :style="[this.divStyle, this.icon_heading_flip]" :topic="topic" class="main">
 
         <div class="img-container">
             <img :src="require(`@/assets/icons/${topic.imgName}`)" :alt="topic.title">
@@ -8,7 +8,7 @@
         <div class="text-container">
             <h1 :style="this.h1Style">{{topic.title}}</h1>
         </div>
-        <info-card v-if="!isHidden" transition="expand" :details="infoCard" id="info" />
+        <info-card v-if="!isHidden" transition="expand" :details="topic['infoCard']" id="info" />
     </div>
 </template>
 
@@ -21,13 +21,13 @@ import {eventBus} from '../main.js'
         name: 'topic-banner',
         data() {
             return {
-                isHidden: true
+                isHidden: this.topic.detailHidden
             }
         },
         components: {
             "info-card": InfoCard
         },
-        props:['topic', 'infoCard'],
+        props:['topics', 'topic', 'infoCard'],
         computed: {
             divStyle() {
                 return {"backgroundColor": this.topic.bgColour};
@@ -43,8 +43,16 @@ import {eventBus} from '../main.js'
         },
         methods: {
             handleClick() {
+                this.isHidden = !this.isHidden;
                 eventBus.$emit('topic-selected', this.topic);
-        }
+                console.log("Hidden Data on Click:", this.isHidden)
+            }
+        },
+        mounted() {
+        console.log("When loaded hidden is: ", this.isHidden)
+        // console.log("When loaded infoCard is: ", this.infoCard)
+        console.log("When loaded topic is: ", this.topic)
+        console.log("When loaded topics is: ", this.topics)
     }
 }
 </script>
@@ -57,6 +65,7 @@ import {eventBus} from '../main.js'
     max-width: 100%;
     transition-duration: 0.5s;
     opacity: 0.8;
+    flex-wrap: wrap;
 }
 .main:hover {
     opacity: 1;

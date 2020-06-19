@@ -1,6 +1,6 @@
 <template>
     <div>
-        <topic-banner v-for="(topic, index) in topics" :topic="topic" :infoCard="infoCard" :key="index" id="" />
+        <topic-banner v-for="(topic, index) in topics" :topics="topics" :topic="topic" :key="index" id="" />
     </div>
 
 </template>
@@ -15,20 +15,21 @@ import {eventBus} from '../main.js'
         name: 'topic-list',
         props: ['topics'],
         components: {
-            "topic-banner": TopicBanner,
-            "info-card": InfoCard
+            "topic-banner": TopicBanner
+            // "info-card": InfoCard (:infoCard="infoCard")
         },
         data: function(){
             return {
-                infoCard: null,
+                // infoCard: null,
                 isHidden: false
                 }
-        },
-        mounted() {
-            eventBus.$on('topic-selected', (topic) => {
-            this.infoCard = topic;
-        })
-    }
+        }
+        // ,
+        // mounted() {
+        //     eventBus.$on('topic-selected', (topic) => {
+        //     this.topic.infoCard = topic;
+        // })
+    // }
 }
 </script>
 
