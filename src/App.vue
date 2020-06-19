@@ -34,15 +34,35 @@ export default {
           infoCard: null,
           portfolio: [
             {
-              projectTitle: "Project Title",
-              images: 'Imgurl',
-              link: 'urlToProject'
+              title: "LukeMelvin.com",
+              blurb: "This was a scratch built in house project for our own portfolio site. It is always changing.",
+              image: 'lukemelvin.png',
+              link: 'http://www.lukemelvin.com'
             },
             {
-              projectTitle: "Project Title",
-              images: 'Imgurl',
-              link: 'urlToProject'
+              title: "Punk API",
+              blurb: "A small vue application to try out the BrewDog Punk api.",
+              image: null,
+              link: 'https://github.com/LUKERHYS/Brewdog-Punk-API'
             },
+            {
+              title: "Simulated Network Monitor",
+              blurb: "This python backend simulates live network traffic. We decided to build this so that one could use it to design and develop a network monitoring dash board offline. We also built a React front end for it.",
+              image: null,
+              link: 'https://github.com/LUKERHYS/Simulated-Network-Monitor'
+            },
+            {
+              title: "Stocks & Shares Portfolio",
+              blurb: "This project was a vue based, web application that holds and tracks personal stocks and shares fed from several APIs.",
+              image: null,
+              link: 'https://github.com/LUKERHYS/Stocks-Shares-portfolio-VueJS-MongoDB-Express'
+            },
+            {
+              title: "Gym Booking system",
+              blurb: "This project is a full CRUD Ruby and Sinatra web application. It can track members, workouts and their interactions.",
+              image: null,
+              link: 'https://github.com/LUKERHYS/Gym-Booking-App-Ruby-HTML-CSS'
+            }
           ]
         },
         {
@@ -55,15 +75,11 @@ export default {
           infoCard: null,
           portfolio: [
             {
-              projectTitle: "Project Title",
-              images: 'Imgurl',
-              link: 'urlToProject'
-            },
-            {
-              projectTitle: "Project Title",
-              images: 'Imgurl',
-              link: 'urlToProject'
-            },
+              title: "LukeRhysPhotography",
+              blurb: "LukeRhysPhotography started life as an independant entity run by myself as a freelancer. Once the decision was made to start the agency it was an easy desicion to bring it in house.",
+              image: 'LRP.png',
+              link: 'https://www.lukerhysphotography.com/'
+            }
           ]
         },
         {
@@ -77,15 +93,11 @@ export default {
           infoCard: null,
           portfolio: [
             {
-              projectTitle: "Project Title",
-              images: 'Imgurl',
-              link: 'urlToProject'
-            },
-            {
-              projectTitle: "Project Title",
-              images: 'Imgurl',
-              link: 'urlToProject'
-            },
+              title: "golfclubs4cash. ltd",
+              blurb: "GC4C were one of the very first design clients we took on and we continue to do all sorts of work for them. they keep things interesting.",
+              image: 'icon-img-placeholder.svg',
+              link: null
+            }
           ]
         },
         {
@@ -97,18 +109,8 @@ export default {
           flip: true, 
           blurb: "Blog you say", 
           infoCard: null,
-          portfolio: [
-            {
-              projectTitle: "Project Title",
-              images: 'Imgurl',
-              link: 'urlToProject'
-            },
-            {
-              projectTitle: "Project Title",
-              images: 'Imgurl',
-              link: 'urlToProject'
-            },
-          ]
+          portfolio: [],
+          posts: []
         }
       ]
     }

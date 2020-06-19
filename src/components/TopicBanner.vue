@@ -21,7 +21,7 @@ import {eventBus} from '../main.js'
         name: 'topic-banner',
         data() {
             return {
-                isHidden: null
+                isHidden: true
             }
         },
         components: {
