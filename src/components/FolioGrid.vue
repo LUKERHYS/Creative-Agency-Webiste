@@ -1,10 +1,6 @@
 <template>
     <div class="grid-wrapper">
-        <folio-item />
-        <folio-item />
-        <folio-item />
-        <folio-item />
-        <folio-item />
+        <folio-item :portfolio="portfolio" />
     </div>
 </template>
 

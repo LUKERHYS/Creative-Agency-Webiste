@@ -1,6 +1,6 @@
 <template>
-    <div class="main">
-        
+    <div :v-for="(folio, index) in portfolio" :key="index" class="main">
+
     </div>
 </template>
 

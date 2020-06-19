@@ -5,7 +5,7 @@
                 <p>{{this.details.blurb}}</p>
             </div>
 
-            <folio-grid />
+            <folio-grid :portfolio="details" />
 
         </div>
 </template>
