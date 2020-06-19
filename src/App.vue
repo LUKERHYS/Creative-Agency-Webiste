@@ -52,7 +52,19 @@ export default {
           titleColour: "#F15025", 
           imgName: "camera.png", 
           flip: true, blurb: "Photographys is ace!", 
-          infoCard: null
+          infoCard: null,
+          portfolio: [
+            {
+              projectTitle: "Project Title",
+              images: 'Imgurl',
+              link: 'urlToProject'
+            },
+            {
+              projectTitle: "Project Title",
+              images: 'Imgurl',
+              link: 'urlToProject'
+            },
+          ]
         },
         {
           id: 3, 
@@ -62,7 +74,19 @@ export default {
           imgName: "design.png", 
           flip: false, 
           blurb: "Design is tough but I enjoy it", 
-          infoCard: null
+          infoCard: null,
+          portfolio: [
+            {
+              projectTitle: "Project Title",
+              images: 'Imgurl',
+              link: 'urlToProject'
+            },
+            {
+              projectTitle: "Project Title",
+              images: 'Imgurl',
+              link: 'urlToProject'
+            },
+          ]
         },
         {
           id: 4, 
@@ -72,7 +96,19 @@ export default {
           imgName: "scroll.png", 
           flip: true, 
           blurb: "Blog you say", 
-          infoCard: null
+          infoCard: null,
+          portfolio: [
+            {
+              projectTitle: "Project Title",
+              images: 'Imgurl',
+              link: 'urlToProject'
+            },
+            {
+              projectTitle: "Project Title",
+              images: 'Imgurl',
+              link: 'urlToProject'
+            },
+          ]
         }
       ]
     }
