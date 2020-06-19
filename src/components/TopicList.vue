@@ -16,21 +16,13 @@ import {eventBus} from '../main.js'
         props: ['topics'],
         components: {
             "topic-banner": TopicBanner
-            // "info-card": InfoCard (:infoCard="infoCard")
         },
         data: function(){
             return {
-                // infoCard: null,
                 isHidden: false
-                }
+            }
         }
-        // ,
-        // mounted() {
-        //     eventBus.$on('topic-selected', (topic) => {
-        //     this.topic.infoCard = topic;
-        // })
-    // }
-}
+    }
 </script>
 
 <style lang="css" scoped>

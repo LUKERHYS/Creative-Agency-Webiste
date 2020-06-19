@@ -27,7 +27,7 @@ import {eventBus} from '../main.js'
         components: {
             "info-card": InfoCard
         },
-        props:['topics', 'topic', 'infoCard'],
+        props:['topics', 'topic'],
         computed: {
             divStyle() {
                 return {"backgroundColor": this.topic.bgColour};
@@ -45,16 +45,9 @@ import {eventBus} from '../main.js'
             handleClick() {
                 this.isHidden = !this.isHidden;
                 eventBus.$emit('topic-selected', this.topic);
-                console.log("Hidden Data on Click:", this.isHidden)
             }
-        },
-        mounted() {
-        console.log("When loaded hidden is: ", this.isHidden)
-        // console.log("When loaded infoCard is: ", this.infoCard)
-        console.log("When loaded topic is: ", this.topic)
-        console.log("When loaded topics is: ", this.topics)
+        }
     }
-}
 </script>
 
 <style lang="css" scoped>

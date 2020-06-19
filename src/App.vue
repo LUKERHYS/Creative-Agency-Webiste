@@ -36,16 +36,6 @@ export default {
         this.topics[foundIndex]['infoCard'] = infoCardDetails;
     })
   }
-  // ,
-  // mounted() {
-  //     eventBus.$on('reset-hide', (reset) => {
-  //       // array.forEach(function(v){ delete v.bad });
-  //       this.topics.forEach(function(topicReset){
-  //         topicReset.detailHidden = true;
-  //         console.log("recieved reset and topic is : ", topicReset.detailHide);
-  //       });
-  //   })
-  // }
 }
 </script>
 
