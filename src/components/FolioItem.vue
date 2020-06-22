@@ -1,9 +1,8 @@
 <template>
     <a :href="project.link" class="main">
-        <div class="image">
-            <img :src="require(`@/assets/projects/${project.image}`)" :alt="project.title" target="_blank">
-            <!-- <iframe v-if="project.link" :src="project.link" frameborder="0"></iframe> -->
-        </div>
+        <div class="image" >
+            <img :href="project.link" :src="require(`@/assets/projects/${project.image}`)" :alt="project.title" target="_blank">
+            </div>
         <div class="text">
             <h3>
                 {{project.title}}
@@ -36,30 +35,28 @@
 
 <style lang="css" scoped>
     div {
-        /* border: solid red 1px; */
+        
     }
     .main {
-        margin: 1px;
+        margin: 1em;
         padding:inherit;
-        overflow: wrap;
+        overflow: hidden;
         text-decoration: none;
     }
      .text {
-        background-color: #ffffff;
         padding: 0.5em;
         margin: 0;
+        padding: 0;
         overflow: hidden;
-    }
+     }
     .image {
-        border: solid #ffffff 2px;
-        overflow: hidden;
-        margin: 0;
-        overflow: hidden;
+        display: block;
+        overflow: scroll;
+        max-height: 250px;
     }
     img {
-        max-width:100%;
-        height: auto;
-        margin: 0;
+        width: 100%;
+        padding: 0;
     }
     a {
         color: #000000;
@@ -68,5 +65,11 @@
     }
     h1:hover {
         text-decoration: underline;
+    }
+    p {
+        display: none;
+    }
+    p:hover {
+        display: inline-block;
     }
 </style>

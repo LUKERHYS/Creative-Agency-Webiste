@@ -1,8 +1,8 @@
 <template>
         <div class="details-container">
             <div class="details-child">
-                <h1>{{this.details.title}}</h1>
-                <p>{{this.details.blurb}}</p>
+                <!-- <h1>{{this.details.title}}</h1> -->
+                <h4>{{this.details.blurb}}</h4>
             </div>
 
             <folio-grid :portfolio="details" />

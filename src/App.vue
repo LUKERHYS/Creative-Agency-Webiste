@@ -81,12 +81,6 @@ export default {
               link: 'https://www.lukerhysphotography.com/'
             },
             {
-              title: "Innis & Gunn",
-              blurb: null,
-              image: 'COMP1.jpg',
-              link: 'https://www.lukerhysphotography.com/'
-            },
-            {
               title: "golfclubs4cash",
               blurb: null,
               image: 'GOLF_INSTA.jpeg',
@@ -98,6 +92,12 @@ export default {
               image: 'PXG+Putter.jpeg',
               link: 'https://www.lukerhysphotography.com/'
             },
+            // {
+            //   title: "golfclubs4cash",
+            //   blurb: null,
+            //   image: 'kronos+(1+of+1).jpg',
+            //   link: 'https://www.lukerhysphotography.com/'
+            // },
             {
               title: "Shennaghys Jiu",
               blurb: null,
@@ -105,9 +105,9 @@ export default {
               link: 'https://www.lukerhysphotography.com/'
             },
             {
-              title: "Mono Edinburgh",
+              title: "Innis & Gunn",
               blurb: null,
-              image: 'kronos+(1+of+1).jpg',
+              image: 'COMP1.jpg',
               link: 'https://www.lukerhysphotography.com/'
             },
             {
@@ -125,7 +125,7 @@ export default {
           titleColour: "#72A276", 
           imgName: "design.png", 
           flip: false, 
-          blurb: "Design is tough but I enjoy it", 
+          blurb: " ", 
           infoCard: null,
           portfolio: [
             {
@@ -143,7 +143,7 @@ export default {
           titleColour: "#72A276", 
           imgName: "scroll.png", 
           flip: true, 
-          blurb: "Blog you say", 
+          blurb: "A blog is coming very soon. I have the first few articles ready to publish. I just need a little more time finalising how my Blogs will look on the new site.", 
           infoCard: null,
           portfolio: [],
           posts: []
