@@ -33,6 +33,7 @@ import {eventBus} from '../main.js'
         width: 75%;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: min-content;
         padding: 0 0 2em 0;
     }
     /* .grid-wrapper {

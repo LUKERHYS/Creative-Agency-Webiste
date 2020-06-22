@@ -42,25 +42,25 @@ export default {
             {
               title: "Punk API",
               blurb: "A small vue application to try out the BrewDog Punk api.",
-              image: null,
+              image: 'git.png',
               link: 'https://github.com/LUKERHYS/Brewdog-Punk-API'
             },
             {
               title: "Simulated Network Monitor",
               blurb: "This python backend simulates live network traffic. We decided to build this so that one could use it to design and develop a network monitoring dash board offline. We also built a React front end for it.",
-              image: null,
+              image: 'git.png',
               link: 'https://github.com/LUKERHYS/Simulated-Network-Monitor'
             },
             {
               title: "Stocks & Shares Portfolio",
               blurb: "This project was a vue based, web application that holds and tracks personal stocks and shares fed from several APIs.",
-              image: null,
+              image: 'git.png',
               link: 'https://github.com/LUKERHYS/Stocks-Shares-portfolio-VueJS-MongoDB-Express'
             },
             {
               title: "Gym Booking system",
               blurb: "This project is a full CRUD Ruby and Sinatra web application. It can track members, workouts and their interactions.",
-              image: null,
+              image: 'git.png',
               link: 'https://github.com/LUKERHYS/Gym-Booking-App-Ruby-HTML-CSS'
             }
           ]
@@ -75,11 +75,47 @@ export default {
           infoCard: null,
           portfolio: [
             {
-              title: "LukeRhysPhotography",
-              blurb: "LukeRhysPhotography started life as an independant entity run by myself as a freelancer. Once the decision was made to start the agency it was an easy desicion to bring it in house.",
-              image: 'LRP.png',
+              title: "Adam Melvin Music",
+              blurb: null,
+              image: 'ADAM_PROMO-6.jpeg',
               link: 'https://www.lukerhysphotography.com/'
-            }
+            },
+            {
+              title: "Innis & Gunn",
+              blurb: null,
+              image: 'COMP1.jpg',
+              link: 'https://www.lukerhysphotography.com/'
+            },
+            {
+              title: "golfclubs4cash",
+              blurb: null,
+              image: 'GOLF_INSTA.jpeg',
+              link: 'https://www.lukerhysphotography.com/'
+            },
+            {
+              title: "golfclubs4cash",
+              blurb: null,
+              image: 'PXG+Putter.jpeg',
+              link: 'https://www.lukerhysphotography.com/'
+            },
+            {
+              title: "Shennaghys Jiu",
+              blurb: null,
+              image: 'Shen2019_Sunday.jpg',
+              link: 'https://www.lukerhysphotography.com/'
+            },
+            {
+              title: "Mono Edinburgh",
+              blurb: null,
+              image: 'kronos+(1+of+1).jpg',
+              link: 'https://www.lukerhysphotography.com/'
+            },
+            {
+              title: "Mono Edinbuurgh",
+              blurb: null,
+              image: 'Mono2-30.jpg',
+              link: 'https://www.lukerhysphotography.com/'
+            },
           ]
         },
         {

@@ -1,13 +1,13 @@
 <template>
     <a :href="project.link" class="main">
         <div class="image">
-            <img v-if="!project.link" :src="require(`@/assets/projects/${project.image}`)" :alt="project.title" target="blank">
-            <iframe v-if="project.link" :src="project.link" frameborder="0"></iframe>
+            <img :src="require(`@/assets/projects/${project.image}`)" :alt="project.title" target="_blank">
+            <!-- <iframe v-if="project.link" :src="project.link" frameborder="0"></iframe> -->
         </div>
         <div class="text">
-            <h1>
+            <h3>
                 {{project.title}}
-            </h1>
+            </h3>
             <p>
                 {{project.blurb}}
             </p>
@@ -48,15 +48,17 @@
         background-color: #ffffff;
         padding: 0.5em;
         margin: 0;
+        overflow: hidden;
     }
     .image {
         border: solid #ffffff 2px;
         overflow: hidden;
         margin: 0;
+        overflow: hidden;
     }
     img {
         max-width:100%;
-        max-height:100%;
+        height: auto;
         margin: 0;
     }
     a {
