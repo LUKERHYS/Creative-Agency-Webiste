@@ -75,9 +75,10 @@ import {eventBus} from '../main.js'
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    width: 100%;
-    min-width: 50%;
+    width: 50%;
+    height: auto;
+    margin: 0;
+    padding: 0;
 }
 h1 {
     font-size: 12vh;
