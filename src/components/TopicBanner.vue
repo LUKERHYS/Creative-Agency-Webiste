@@ -57,12 +57,12 @@ import {eventBus} from '../main.js'
     width: 100vw;
     max-width: 100%;
     transition-duration: 0.5s;
-    opacity: 0.8;
+    opacity: 1;
     flex-wrap: wrap;
     /* border-radius: 1em 0 0 1em; */
 }
 .main:hover {
-    opacity: 1;
+    opacity: 0.8;
 }
 @media screen and (max-width: 900px) {
  .main{
