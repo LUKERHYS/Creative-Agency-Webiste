@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "topics",
+  "info": {
+    "name": "Topic"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "titleColour": {
+      "type": "string"
+    },
+    "imgName": {
+      "type": "string"
+    },
+    "flip": {
+      "type": "boolean",
+      "default": false
+    },
+    "blurb": {
+      "type": "richtext"
+    },
+    "infoCard": {
+      "type": "json"
+    },
+    "bgColour": {
+      "type": "string"
+    },
+    "portfolio": {
+      "via": "topic",
+      "collection": "portfolio"
+    }
+  }
+}
