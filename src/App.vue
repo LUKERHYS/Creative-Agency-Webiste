@@ -26,7 +26,7 @@ export default {
     }
   },
   mounted() {
-    fetch('http://localhost:1337/topics')
+    fetch('')
     .then(res => res.json())
     .then(payload => {this.topics = payload})
 
