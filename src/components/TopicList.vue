@@ -28,9 +28,9 @@ import {eventBus} from '../main.js'
 <style lang="css" scoped>
 .topic-container {
     display: flex;
-    flex-direction: column;
     max-width: 100vw;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: center;
 }
 .topic {
     max-width: 90vw;

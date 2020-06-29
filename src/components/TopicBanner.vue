@@ -34,12 +34,13 @@ import {eventBus} from '../main.js'
             },
             h1Style() {
                 return {"color": this.topic.titleColour};
-            },
-            icon_heading_flip() {
-                if(this.topic.flip == true) {
-                  return {"flex-direction": "row-reverse"};  
-                }
             }
+            // ,
+            // icon_heading_flip() {
+            //     if(this.topic.flip == true) {
+            //       return {"flex-direction": "row-reverse"};  
+            //     }
+            // }
         },
         methods: {
             handleClick() {
@@ -51,37 +52,42 @@ import {eventBus} from '../main.js'
 </script>
 
 <style lang="css" scoped>
+div {
+    /* border: rebeccapurple solid ; */
+}
 .main {
-    display: inline-flex;
-    align-items: center;
-    width: 100vw;
-    max-width: 100%;
+    border-radius: 0.4em;
+    margin: 1em;
+    min-height: 40vh;
+    min-width: 25vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* display: inline-flex;
+    justify-content: center;
+    /* align-items: center; */
+    /* width: 30vw;
+    max-width: 30vw;
     transition-duration: 0.5s;
     opacity: 1;
     flex-wrap: wrap;
-    /* border-radius: 1em 0 0 1em; */
+    
+    flex-direction: column; */ 
 }
 .main:hover {
     opacity: 0.8;
 }
-@media screen and (max-width: 900px) {
- .main{
-    flex-direction: column-reverse;
-    flex-wrap: wrap;
-    padding: 1em 0;
-  }
-}
 .img-container, .text-container {
     display: flex;
-    align-items: center;
     justify-content: center;
-    width: 50%;
-    height: auto;
-    margin: 0;
-    padding: 0;
+    align-items: center;
 }
+.img-container {
+    height: 250px;
+}
+
 h1 {
-    font-size: 12vh;
+    font-size: 6vh;
 }
 img {
     max-height: 200px;
