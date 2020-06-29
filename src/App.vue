@@ -26,7 +26,7 @@ export default {
     }
   },
   mounted() {
-    fetch('')
+    fetch('https://cms.lukemelvin.com/topics')
     .then(res => res.json())
     .then(payload => {this.topics = payload})
 
