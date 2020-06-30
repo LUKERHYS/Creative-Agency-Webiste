@@ -50,7 +50,8 @@ export default {
 
 <style>
 #app {
-  font-family: Futura, Helvetica, Arial, sans-serif;
+  /* font-family: Futura, Helvetica, Arial, sans-serif; */
+  font: 2.5vh  Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

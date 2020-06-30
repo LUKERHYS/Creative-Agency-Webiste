@@ -26,7 +26,7 @@ import {eventBus} from '../main.js'
 
 <style lang="css" scoped>
 .details-container {
-    background-color: lightgray;
+    background-color: white;
     width:100vw;
     display: flex;
     flex-direction: column;
