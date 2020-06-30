@@ -5,6 +5,8 @@
    
     <topic-list :topics="topics"/>
     <info-card v-if="!isHidden" transition="expand" :details="this.infoCard" id="info" />
+
+    <full-footer />
   </div>
 </template>
 
@@ -12,6 +14,8 @@
 import HeaderBanner from './components/HeaderBanner.vue'
 import TopicList from './components/TopicList.vue'
 import InfoCard from './components/InfoCard.vue'
+import FullFooter from './components/Footer.vue'
+
 
 import {eventBus} from './main.js'
 
@@ -20,7 +24,8 @@ export default {
   components: {
     'header-banner': HeaderBanner,
     'topic-list': TopicList,
-    'info-card' : InfoCard
+    'info-card' : InfoCard,
+    'full-footer' : FullFooter
   },
   data: function() {
     return {
