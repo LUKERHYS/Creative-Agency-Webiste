@@ -38,6 +38,7 @@
     transition: 2s;
     max-width: 100vw;
     z-index: 1000;
+    box-shadow: 0em 0.1em 1em rgba(0, 0, 0, .4);
 }
 h1 {
     margin: 0;

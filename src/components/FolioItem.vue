@@ -18,18 +18,6 @@
     export default {
         name: 'folio-item',
         props: ['project']
-        // computed: {
-        //     imgfetch() {
-        //         promise.fetch(require(`@/assets/projects/${project.image}`))
-        //         .then(res => {
-        //             if(res == null){
-        //                 return "@/assets/projects/icon-img-placeholder.svg"
-        //             } else {
-        //                 return res
-        //             }
-        //         })
-        //     }
-        // }
     }
 </script>
 

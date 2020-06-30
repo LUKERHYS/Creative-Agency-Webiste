@@ -63,16 +63,7 @@ div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* display: inline-flex;
-    justify-content: center;
-    /* align-items: center; */
-    /* width: 30vw;
-    max-width: 30vw;
-    transition-duration: 0.5s;
-    opacity: 1;
-    flex-wrap: wrap;
-    
-    flex-direction: column; */ 
+    box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, .4);
 }
 .main:hover {
     opacity: 0.8;

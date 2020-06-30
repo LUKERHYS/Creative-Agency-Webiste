@@ -30,7 +30,7 @@ import {eventBus} from '../main.js'
 
 <style lang="css" scoped>
     .grid-wrapper {
-        width: 75%;
+        width: 100%;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         padding: 0 0 2em 0;

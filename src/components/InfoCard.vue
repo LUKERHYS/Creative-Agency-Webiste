@@ -3,10 +3,10 @@
             <div class="details-child">
                 <!-- <h1>{{this.details.title}}</h1> -->
                 <!-- <h4>{{this.details.blurb}}</h4> -->
+            
+
+                <folio-grid :portfolio="details" />
             </div>
-
-            <folio-grid :portfolio="details" />
-
         </div>
 </template>
 
@@ -25,16 +25,24 @@ import {eventBus} from '../main.js'
 </script>
 
 <style lang="css" scoped>
+div {
+    /* border: red solid; */
+}
 .details-container {
-    background-color: white;
-    width:100vw;
+    background-color: rgba(245,245,245, 0.0);
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
 }
 .details-child {
-    width: 50vw;
+    border-radius: 0.4em;
+    display: flex;
+    justify-content: center;
+    width: 75vw;
+    background-color: white;
     text-justify: left;
+    box-shadow: 0em 0.5em 1em rgba(0, 0, 0, .4);
 }
 </style>
