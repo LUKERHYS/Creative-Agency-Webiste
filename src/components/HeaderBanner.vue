@@ -4,7 +4,7 @@
         <h1>Luke <br /> Melvin.</h1>
     </div>
     <div class="info-banner">
-        <h5>This webiste is still under contruction. Please drop us an email us <a href="mailto:hello@lukemelvin.com?subject=Your%website%is%broken.%I%need%more%info!">Here</a> if you have any questions or can't find what you need.</h5>
+        <h5>This webiste is still under contruction. Please drop us an <a href="mailto:hello@lukemelvin.com?subject=Your%website%is%broken.%I%need%more%info!">eMail</a> if you have any questions or can't find what you need.</h5>
     </div>
 </div>
 </template>
