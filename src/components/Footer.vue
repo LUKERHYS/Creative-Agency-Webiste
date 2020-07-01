@@ -1,18 +1,20 @@
 <template>
     <div class="footer-container">
-        <div class="footer-child">
+        <div class="footer-child left">
             <ul>
                 <li><p>hello@lukemelvin.com</p></li>
             </ul>
         </div>
-        <div class="footer-child">
+        <div class="footer-child middle">
             <ul>
                 <li><p>&copy; 2020 LukeMelvin.com</p></li>
             </ul>
         </div>
         <div class="footer-child">
             <ul>
-                <li><p>hello@lukemelvin.com</p></li>
+                <li><p>T&C's</p></li>
+                <li><p>privacy/cookies</p></li>
+                <li><p>GDPR Compliance</p></li>
             </ul>
         </div>
     </div>
@@ -25,16 +27,12 @@
 </script>
 
 <style lang="css" scoped>
-div {
-    /* border: red solid; */
-}
 .footer-container {
     display: flex;
     justify-content: space-between;
-    position: relative;
-    left: 0;
+    position: fixed;
     bottom: 0;
-    height: 20vh;
+    height: 15vh;
     width: 100vw;
     margin-top: 5vh;
     background-color: #404040;;
@@ -47,9 +45,11 @@ div {
     justify-content: flex-end;
     width: 30vw;
 }
+.left, .middle {
+    border-right: #FABC2A dashed 1px;
+}
 li {
     list-style: none;
-    list-style-position: ;
 }
 p {
     font-size: 15px;

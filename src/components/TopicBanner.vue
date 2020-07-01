@@ -52,14 +52,10 @@ import {eventBus} from '../main.js'
 </script>
 
 <style lang="css" scoped>
-div {
-    /* border: rebeccapurple solid ; */
-}
 .main {
-    border-radius: 0.4em;
     margin: 1em;
     min-height: 40vh;
-    min-width: 25vw;
+    min-width: 17vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -67,6 +63,9 @@ div {
 }
 .main:hover {
     opacity: 0.8;
+}
+.main:active {
+    box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, .0);
 }
 .img-container, .text-container {
     display: flex;
@@ -76,7 +75,6 @@ div {
 .img-container {
     height: 250px;
 }
-
 h1 {
     font-size: 6vh;
 }

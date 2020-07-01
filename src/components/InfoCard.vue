@@ -1,9 +1,8 @@
 <template>
         <div class="details-container">
-            <div class="details-child">
-                <!-- <h1>{{this.details.title}}</h1> -->
-                <!-- <h4>{{this.details.blurb}}</h4> -->
-            
+            <!-- <h1>{{this.details.title}}</h1> -->
+                <h4>{{this.details.blurb}}</h4>
+             <div class="details-child">
 
                 <folio-grid :portfolio="details" />
             </div>
@@ -35,6 +34,8 @@ div {
     flex-direction: column;
     align-items: center;
     position: relative;
+    padding: 0;
+    margin: 0;
 }
 .details-child {
     border-radius: 0.4em;

@@ -47,7 +47,7 @@
         padding: 0;
     }
     a {
-        color: #000000;
+        color: #404040;
         display: flex;
         flex-direction: column;
     }
