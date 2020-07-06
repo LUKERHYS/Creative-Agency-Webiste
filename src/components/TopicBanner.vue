@@ -1,12 +1,16 @@
 <template>
-    <div v-on:click="[handleClick()]" :style="[this.divStyle]" :topic="topic" class="main">
+    <div v-on:click="[handleClick()]" :style="[this.divStyle, this.icon_heading_flip]" :topic="topic" class="main">
 
         <div class="img-container">
             <img :src="require(`@/assets/icons/${topic.imgName}`)" :alt="topic.title">
         </div>
 
         <div class="text-container">
-            <h1 :style="this.h1Style">{{topic.title}}</h1>
+            <!-- <h1 :style="this.h1Style">{{topic.title}}</h1> -->
+            <div class="description">
+                <h1>{{topic.title}}</h1>
+                <p>{{topic.blurb}}</p>
+            </div>
         </div>
         <!-- <info-card v-if="!isHidden" transition="expand" :details="topic['infoCard']" id="info" /> -->
     </div>
@@ -35,12 +39,12 @@ import {eventBus} from '../main.js'
             h1Style() {
                 return {"color": this.topic.titleColour};
             }
-            // ,
-            // icon_heading_flip() {
-            //     if(this.topic.flip == true) {
-            //       return {"flex-direction": "row-reverse"};  
-            //     }
-            // }
+            ,
+            icon_heading_flip() {
+                if(this.topic.flip == true) {
+                  return {"flex-direction": "row-reverse"};  
+                }
+            }
         },
         methods: {
             handleClick() {
@@ -52,34 +56,51 @@ import {eventBus} from '../main.js'
 </script>
 
 <style lang="css" scoped>
+div {
+    border: solid pink;
+}
 .main {
-    margin: 1em;
-    min-height: 40vh;
+    height: 900px;
     min-width: 17vw;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, .4);
+    border-bottom: solid 0.5px #adadad;
+    /* box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, .4); */
 }
 .main:hover {
-    opacity: 0.8;
+    /* opacity: 0.8; */
 }
 .main:active {
-    box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, .0);
+    /* box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, .0); */
 }
 .img-container, .text-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 50%;
+    text-justify: left;
 }
-.img-container {
-    height: 250px;
+.text-container {
+    flex-direction: column;
+}
+.title {
+    padding: 0%;
+    margin: 0%;
+}
+.description {
+    max-width: 45%;
+    padding: 0%;
+    margin: 0%;
 }
 h1 {
-    font-size: 6vh;
+    font-size: 10vh;
+    color: #404040;
+}
+p {
+    font-size: 2.5vh;
+    color: #404040;
 }
 img {
-    max-height: 200px;
-    max-width: 200px;
+    max-height: 45%;
+    max-width: 45%;
 }
 </style>

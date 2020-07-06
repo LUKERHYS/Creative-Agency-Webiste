@@ -6,7 +6,7 @@
     <topic-list :topics="topics"/>
     <info-card v-if="!isHidden" transition="expand" :details="this.infoCard" id="info" />
 
-    <full-footer />
+    <!-- <full-footer /> -->
   </div>
 </template>
 
@@ -55,17 +55,10 @@ export default {
 
 <style>
 #app {
-  /* font-family: Futura, Helvetica, Arial, sans-serif; */
-  font: 2.5vh  Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
+  /* font: 2.5vh  Helvetica, sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.grid-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    max-width: 100vw;
-    height: auto;
-    padding: 2%;
-}
+
 </style>

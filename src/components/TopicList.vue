@@ -35,6 +35,6 @@ import {eventBus} from '../main.js'
     justify-content: center;
 }
 .topic {
-    max-width: 90vw;
+    width: 100vw;
 }
 </style>

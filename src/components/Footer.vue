@@ -28,15 +28,19 @@
 
 <style lang="css" scoped>
 .footer-container {
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
     position: relative;
     bottom: -1;
     height: 10vh;
     width: 100vw;
-    margin-top: 5vh;
+    margin-top: 5vh; */
+     position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem; 
     background-color: #404040;;
-    color: #FABC2A;
+    color: #FBFBFB;
 }
 .footer-child {
     display: flex;
