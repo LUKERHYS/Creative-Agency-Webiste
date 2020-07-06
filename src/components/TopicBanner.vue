@@ -57,7 +57,7 @@ import {eventBus} from '../main.js'
 
 <style lang="css" scoped>
 div {
-    border: solid pink;
+    /* border: solid pink; */
 }
 .main {
     height: 900px;
