@@ -1,10 +1,13 @@
 <template>
         <div class="details-container">
-            <!-- <h1>{{this.details.title}}</h1> -->
-                <h4>{{this.details.blurb}}</h4>
              <div class="details-child">
-
-                <folio-grid :portfolio="details" />
+                 <div class="blurb">
+                    <h1>{{this.details.title}}</h1>
+                    <h4>{{this.details.blurb}}</h4>
+                 </div>
+                <div class="examples">
+                    <folio-grid :portfolio="details" />
+                </div>
             </div>
         </div>
 </template>
@@ -30,16 +33,27 @@ div {
 .details-container {
     background-color: rgba(245,245,245, 0.0);
     width: 100vw;
+    max-height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
     padding: 0;
-    margin: 0;
+    margin-bottom: 20px;
+}
+.blurb {
+    width: 50%;
+    padding: 1em;
+    overflow: scroll;
+}
+.examples {
+    width: 50%;
+    overflow: scroll;
 }
 .details-child {
     border-radius: 0.4em;
     display: flex;
+    max-height: 80vh;
     justify-content: center;
     width: 75vw;
     background-color: white;

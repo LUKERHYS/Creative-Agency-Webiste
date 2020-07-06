@@ -29,6 +29,7 @@ import {eventBus} from '../main.js'
 .topic-container {
     display: flex;
     max-width: 100vw;
+    height: 100vh;
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: center;

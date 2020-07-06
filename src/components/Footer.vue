@@ -30,9 +30,9 @@
 .footer-container {
     display: flex;
     justify-content: space-between;
-    position: fixed;
-    bottom: 0;
-    height: 15vh;
+    position: relative;
+    bottom: -1;
+    height: 10vh;
     width: 100vw;
     margin-top: 5vh;
     background-color: #404040;;
