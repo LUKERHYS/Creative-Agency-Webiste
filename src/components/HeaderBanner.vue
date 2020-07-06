@@ -22,10 +22,10 @@
                 };
                 function scrollFunction() {
                     if (onload) {
-                        document.getElementById("header").style.fontSize = "5vh";
-                        document.getElementById("header").style.height= "12vh";   
+                        document.getElementById("header").style.fontSize = "100%";
+                        document.getElementById("header").style.height= "10vh";   
                     } else {
-                        // document.getElementById("header").style.fontSize = "20vh";
+                        document.getElementById("header").style.fontSize = "10vh";
                         document.getElementById("header").style.height= "100vh";
                     }
                 }
@@ -36,7 +36,7 @@
 <style lang="css" scoped>
 #header {
     background-color: #FABC2A;
-    /* font-size: 5vh; */
+    font-size: 10vh;
     height: 100vh;
     position: sticky;
     top: 0;
