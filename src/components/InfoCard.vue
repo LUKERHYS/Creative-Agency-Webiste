@@ -1,13 +1,7 @@
 <template>
         <div class="details-container">
              <div class="details-child">
-                 <div class="blurb">
-                    <h1>{{this.details.title}}</h1>
-                    <h4>{{this.details.blurb}}</h4>
-                 </div>
-                <div class="examples">
                     <folio-grid :portfolio="details" />
-                </div>
             </div>
         </div>
 </template>
@@ -27,15 +21,12 @@ import {eventBus} from '../main.js'
 </script>
 
 <style lang="css" scoped>
-div {
-    /* border: red solid; */
-}
 .details-container {
-    background-color: rgba(245,245,245, 0.0);
+    background-color: rgba(0, 0, 0, 0.5);
     width: 100vw;
-    max-height: 80vh;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     position: relative;
     padding: 0;
@@ -56,7 +47,7 @@ div {
     max-height: 80vh;
     justify-content: center;
     width: 75vw;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 1);
     text-justify: left;
     box-shadow: 0em 0.5em 1em rgba(0, 0, 0, .4);
 }

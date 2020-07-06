@@ -4,7 +4,7 @@
     <header-banner />
    
     <topic-list :topics="topics"/>
-    <info-card v-if="!isHidden" transition="expand" :details="this.infoCard" id="info" />
+    <!-- <info-card v-if="!isHidden" transition="expand" :details="this.infoCard" id="info" /> -->
 
     <!-- <full-footer /> -->
   </div>
@@ -13,7 +13,7 @@
 <script>
 import HeaderBanner from './components/HeaderBanner.vue'
 import TopicList from './components/TopicList.vue'
-import InfoCard from './components/InfoCard.vue'
+// import InfoCard from './components/InfoCard.vue'
 import FullFooter from './components/Footer.vue'
 
 
@@ -24,7 +24,7 @@ export default {
   components: {
     'header-banner': HeaderBanner,
     'topic-list': TopicList,
-    'info-card' : InfoCard,
+    // 'info-card' : InfoCard,
     'full-footer' : FullFooter
   },
   data: function() {
@@ -43,8 +43,8 @@ export default {
 
       eventBus.$on('topic-selected', (infoCardDetails) => {
         let foundIndex = this.topics.findIndex(currentId => currentId.id == infoCardDetails.id);
-        // this.topics[foundIndex]['infoCard'] = infoCardDetails;
-        this.infoCard= infoCardDetails;
+        this.topics[foundIndex]['infoCard'] = infoCardDetails;
+        // this.infoCard= infoCardDetails;
       })
       eventBus.$on ('hidden-state', (stateChange) => {
         this.isHidden = stateChange;

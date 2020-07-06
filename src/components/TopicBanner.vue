@@ -1,5 +1,5 @@
 <template>
-    <div v-on:click="[handleClick()]" :style="[this.divStyle, this.icon_heading_flip]" :topic="topic" class="main">
+    <div v-on:click="handleClick()" :style="[this.divStyle, this.icon_heading_flip]" :topic="topic" class="main">
 
         <div class="img-container">
             <img :src="require(`@/assets/icons/${topic.imgName}`)" :alt="topic.title">
@@ -12,12 +12,12 @@
                 <p>{{topic.blurb}}</p>
             </div>
         </div>
-        <!-- <info-card v-if="!isHidden" transition="expand" :details="topic['infoCard']" id="info" /> -->
+        <info-card v-if="!isHidden" transition="expand" :details="topic['infoCard']" id="info" />
     </div>
 </template>
 
 <script>
-// import InfoCard from './InfoCard.vue'
+import InfoCard from './InfoCard.vue'
 
 import {eventBus} from '../main.js'
 
@@ -29,7 +29,7 @@ import {eventBus} from '../main.js'
             }
         },
         components: {
-            // "info-card": InfoCard
+            "info-card": InfoCard
         },
         props:['topics', 'topic'],
         computed: {
@@ -59,11 +59,17 @@ import {eventBus} from '../main.js'
 div {
     /* border: solid pink; */
 }
+#info {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 .main {
     height: 900px;
     min-width: 17vw;
     display: flex;
     border-bottom: solid 0.5px #adadad;
+    position: relative;
     /* box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, .4); */
 }
 .main:hover {
