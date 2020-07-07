@@ -3,13 +3,13 @@
     <div id="header" class="main">
         <h1>Luke <br /> Melvin.</h1>
         
-        <div class="dropdown">
-        <img v-on:click="handleClick()" class="menu" :src="require(`@/assets/icons/menu_icon.png`)" />
-            <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-            </div>
+        <div id="dropdown">
+        <img v-on:click="showMenu()" class="menu-icon" :src="require(`@/assets/icons/menu_icon.png`)" />
+            <ul id="nav-content">
+                <li>About</li>
+                <li>contact</li>
+                <li>Work</li>
+            </ul>
         </div>
     </div>
     <div class="info-banner">
@@ -32,17 +32,17 @@
                 function scrollFunction() {
                     if (onload) {
                         document.getElementById("header").style.fontSize = "100%";
-                        document.getElementById("header").style.height= "10vh";   
+                        document.getElementById("header").style.height= "10vh";
                     } else {
                         document.getElementById("header").style.fontSize = "10vh";
                         document.getElementById("header").style.height= "100vh";
-                    }
+                    }  
+
                 }
         },
         methods: {
-            handleClick() {
-                eventBus.$emit('hidden-state', this.isHidden = !this.isHidden);
-                eventBus.$emit('topic-selected', this.topic);
+            showMenu() {
+                        document.getElementById("nav-content").style.display = "inline-block";
             }
         }
     }
@@ -85,42 +85,11 @@ h4 {
     padding: 0%;
     margin: 0%;
 }
-.menu {
-    height: 30%;
-    padding-right: 2%;
+img {
+    height: 5vh;
+    padding-right: 30%;
 }
-.dropbtn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
+#nav-content {
+    display: none;
 }
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-
-
-.dropdown:hover .dropdown-content {display: block;}
-
-
 </style>
