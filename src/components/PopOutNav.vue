@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="main"
         <ul id="nav-content">
                 <li>About</li>
                 <li>contact</li>
@@ -15,5 +15,5 @@
 </script>
 
 <style scoped>
-    
+
 </style>
