@@ -1,17 +1,12 @@
 <template>
 <div class="contianer">
     <div id="header" class="main">
+
         <h1>Luke <br /> Melvin.</h1>
+        <img v-if="showBurger" v-on:click="showMenu()" class="menu-icon" :src="require(`@/assets/icons/menu_icon.png`)" />
         
-        <div id="dropdown">
-        <img v-on:click="showMenu()" class="menu-icon" :src="require(`@/assets/icons/menu_icon.png`)" />
-            <ul id="nav-content">
-                <li>About</li>
-                <li>contact</li>
-                <li>Work</li>
-            </ul>
-        </div>
     </div>
+    <pop-out-banner />
     <div class="info-banner">
         <h4>This webiste is still under contruction. Please drop us an <a href="mailto:hello@lukemelvin.com?subject=Your%website%is%broken.%I%need%more%info!">eMail</a> if you have any questions or can't find what you need.</h4>
     </div>
@@ -23,6 +18,7 @@
         name: 'header-banner',
         data: function () {
             return {
+                showBurger: false
             }
         },
         mounted(){
@@ -87,7 +83,7 @@ h4 {
 }
 img {
     height: 5vh;
-    padding-right: 30%;
+    padding-right: 1%;
 }
 #nav-content {
     display: none;
