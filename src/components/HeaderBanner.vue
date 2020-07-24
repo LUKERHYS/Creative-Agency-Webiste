@@ -3,50 +3,51 @@
     <div id="header" class="main">
 
         <h1>Luke <br /> Melvin.</h1>
-        <img v-if="showBurger" v-on:click="showMenu()" class="menu-icon" :src="require(`@/assets/icons/menu_icon.png`)" />
-        
+        <img v-if="showMenuIcon" v-on:click="popOutNavHidden = !popOutNavHidden" class="menu-icon" :src="require(`@/assets/icons/menu_icon.png`)" />
     </div>
-    <pop-out-banner />
     <div class="info-banner">
         <h4>This webiste is still under contruction. Please drop us an <a href="mailto:hello@lukemelvin.com?subject=Your%website%is%broken.%I%need%more%info!">eMail</a> if you have any questions or can't find what you need.</h4>
+    </div>
+    <div class="pop-out-nav">
+    <pop-out-nav v-if="!popOutNavHidden" />
     </div>
 </div>
 </template>
 
 <script>
+import PopOutNav from './PopOutNav.vue'
     export default {
         name: 'header-banner',
         data: function () {
             return {
-                showBurger: false
+                showMenuIcon: true,
+                popOutNavHidden: true
             }
+        },
+        components: {
+            "pop-out-nav": PopOutNav
         },
         mounted(){
             window.onload = function() {
-                setTimeout(() => {scrollFunction()}, 2000);
+                setTimeout(() => {resizeBanner()}, 2000);
                 };
-                function scrollFunction() {
-                    if (onload) {
-                        document.getElementById("header").style.fontSize = "100%";
-                        document.getElementById("header").style.height= "10vh";
-                    } else {
-                        document.getElementById("header").style.fontSize = "10vh";
-                        document.getElementById("header").style.height= "100vh";
-                    }  
+                
+                function resizeBanner() {
+                if (onload) {
+                    document.getElementById("header").style.fontSize = "100%";
+                    document.getElementById("header").style.height= "10vh";
+                } 
 
-                }
+            }
         },
         methods: {
-            showMenu() {
-                        document.getElementById("nav-content").style.display = "inline-block";
-            }
         }
     }
 </script>
 
 <style lang="css" scoped>
 #header {
-    background-color: #FABC2A;
+background-color: #FABC2A;
     font-size: 10vh;
     height: 100vh;
     width: 100%;
@@ -87,5 +88,11 @@ img {
 }
 #nav-content {
     display: none;
+}
+.pop-out-nav {
+    display: flex;
+    width: 100vw;
+    justify-content: flex-end;
+
 }
 </style>

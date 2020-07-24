@@ -49,6 +49,9 @@ export default {
       eventBus.$on ('hidden-state', (stateChange) => {
         this.isHidden = stateChange;
       })
+      eventBus.$on ('hidden-state', (stateChange) => {
+        this.isHidden = stateChange;
+      })
   }
 }
 </script>
