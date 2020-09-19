@@ -20,7 +20,7 @@ import PopOutNav from './PopOutNav.vue'
         name: 'header-banner',
         data: function () {
             return {
-                showMenuIcon: true,
+                showMenuIcon: false,
                 popOutNavHidden: true
             }
         },
@@ -37,7 +37,6 @@ import PopOutNav from './PopOutNav.vue'
                     document.getElementById("header").style.fontSize = "100%";
                     document.getElementById("header").style.height= "10vh";
                 } 
-
             }
         },
         methods: {
