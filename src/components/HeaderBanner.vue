@@ -1,13 +1,16 @@
 <template>
 <div class="contianer">
     <div id="header" class="main">
-
         <h1>LukeMelvin.</h1>
-        <img v-if="showMenuIcon" v-on:click="popOutNavHidden = !popOutNavHidden" class="menu-icon" :src="require(`@/assets/icons/menu_icon.png`)" />
+        <!-- <img v-if="showMenuIcon" v-on:click="popOutNavHidden = !popOutNavHidden" class="menu-icon" :src="require(`@/assets/icons/menu_icon.png`)" /> -->
+        <div id="nav">
+            <router-link to="/">Home</router-link> |
+            <router-link to="/photo">Photography</router-link>
+        </div>
     </div>
-    <div class="info-banner">
+    <!-- <div class="info-banner">
         <h4>This webiste is still under contruction. Please drop us an <a href="mailto:hello@lukemelvin.com?subject=Your%website%is%broken.%I%need%more%info!">eMail</a> if you have any questions or can't find what you need.</h4>
-    </div>
+    </div> -->
     <!-- <div class="pop-out-nav">
     <pop-out-nav v-if="!popOutNavHidden" />
     </div> -->
