@@ -5,7 +5,7 @@
         <!-- <img v-if="showMenuIcon" v-on:click="popOutNavHidden = !popOutNavHidden" class="menu-icon" :src="require(`@/assets/icons/menu_icon.png`)" /> -->
         <div id="nav">
             <router-link to="/">Home</router-link> |
-            <router-link to="/photo">Photography</router-link>
+            <router-link to="/about">About</router-link>
         </div>
     </div>
     <!-- <div class="info-banner">
