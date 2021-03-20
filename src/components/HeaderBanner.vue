@@ -3,10 +3,10 @@
     <div id="header" class="main">
         <h1>LukeMelvin.</h1>
         <!-- <img v-if="showMenuIcon" v-on:click="popOutNavHidden = !popOutNavHidden" class="menu-icon" :src="require(`@/assets/icons/menu_icon.png`)" /> -->
-        <div id="nav">
+
             <router-link to="/">Home</router-link> |
             <router-link to="/about">About</router-link>
-        </div>
+
     </div>
     <!-- <div class="info-banner">
         <h4>This webiste is still under contruction. Please drop us an <a href="mailto:hello@lukemelvin.com?subject=Your%website%is%broken.%I%need%more%info!">eMail</a> if you have any questions or can't find what you need.</h4>
@@ -19,14 +19,14 @@
 
 <script>
 // import PopOutNav from './PopOutNav.vue'
-//     export default {
-//         name: 'header-banner',
-//         data: function () {
-//             return {
-//                 showMenuIcon: true,
-//                 popOutNavHidden: true
-//             }
-//         },
+    export default {
+        name: 'header-banner',
+        data: function () {
+            return {
+                showMenuIcon: true,
+                popOutNavHidden: true
+            }
+        },
 //         components: {
 //             "pop-out-nav": PopOutNav
 //         },
@@ -45,7 +45,7 @@
 //         },
 //         methods: {
 //         }
-//     }
+    }
 </script>
 
 <style lang="css" scoped>
